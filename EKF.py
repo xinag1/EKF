@@ -1,17 +1,17 @@
-import numpy as np
-import math
-import matplotlib.pyplot as plt
+import numpy as np      #矩阵计算模块
+import math     #数学运算模块
+import matplotlib.pyplot as plt     #绘图模块
 
-# Estimation parameter of EKF
-Q = np.diag([0.1, 0.1, np.deg2rad(1.0), 1.0])**2
+# EKF的估计参数
+Q = np.diag([0.1, 0.1, np.deg2rad(1.0), 1.0])**2        # np.deg2rad(),将角度从度转换为弧度
 R = np.diag([1.0, np.deg2rad(40.0)])**2
 
-#  Simulation parameter
+# 仿真参数
 Qsim = np.diag([0.5, 0.5])**2
 Rsim = np.diag([1.0, np.deg2rad(30.0)])**2
 
-DT = 0.1  # time tick [s]
-SIM_TIME = 50.0  # simulation time [s]
+DT = 0.1  # 时间间隔 [s]
+SIM_TIME = 50.0  # 仿真时间 [s]
 
 show_animation = True
 
